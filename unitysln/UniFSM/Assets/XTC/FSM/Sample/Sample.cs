@@ -32,9 +32,9 @@ class ActionAddRound : Action
 
     protected override void onExit()
     {
-        Paramter paramter = findParamter("round");
-        paramter.AsInt += 1;
-        Debug.LogFormat("--- Round {0} Finish ------------", paramter.AsInt);
+        Parameter parameter = findParameter("round");
+        parameter.AsInt += 1;
+        Debug.LogFormat("--- Round {0} Finish ------------", parameter.AsInt);
     }
 
     protected override void onUpdate()
@@ -155,7 +155,7 @@ public class Sample : MonoBehaviour
     {
         machine = new Machine();
 
-        Paramter round = new Paramter(0);
+        Parameter round = new Parameter(0);
         machine.AddParameter("round", round);
 
         // 基本规则

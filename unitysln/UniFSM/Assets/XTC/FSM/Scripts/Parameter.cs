@@ -1,7 +1,7 @@
 ﻿namespace XTC.FSM
 {
 
-    public class Paramter
+    public class Parameter
     {
         public enum Tag
         {
@@ -18,49 +18,49 @@
         private object value_ = null;
         private Tag tag_ = Tag.NULL;
 
-        public Paramter(string _value)
+        public Parameter(string _value)
         {
             value_ = _value;
             tag_ = Tag.StringValue;
         }
 
-        public Paramter(float _value)
+        public Parameter(float _value)
         {
             value_ = _value;
             tag_ = Tag.FloatValue;
         }
 
-        public Paramter(double _value)
+        public Parameter(double _value)
         {
             value_ = _value;
             tag_ = Tag.DoubleValue;
         }
 
-        public Paramter(bool _value)
+        public Parameter(bool _value)
         {
             value_ = _value;
             tag_ = Tag.BoolValue;
         }
 
-        public Paramter(int _value)
+        public Parameter(int _value)
         {
             value_ = _value;
             tag_ = Tag.IntValue;
         }
 
-        protected Paramter()
+        protected Parameter()
         {
         }
 
-        public static Paramter From(object _value)
+        public static Parameter From(object _value)
         {
-            Paramter paramter = new Paramter();
-            paramter.value_ = _value;
-            paramter.tag_ = Tag.CustomValue;
-            return paramter;
+            Parameter parameter = new Parameter();
+            parameter.value_ = _value;
+            parameter.tag_ = Tag.CustomValue;
+            return parameter;
         }
 
-        public Paramter(object _value)
+        public Parameter(object _value)
         {
             value_ = _value;
             tag_ = Tag.CustomValue;

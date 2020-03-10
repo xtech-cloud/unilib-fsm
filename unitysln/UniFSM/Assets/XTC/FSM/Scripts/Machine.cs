@@ -8,7 +8,7 @@ namespace XTC.FSM
         private List<State> status = new List<State>();
         private Dictionary<string, Command> internalCommands = new Dictionary<string, Command>();
         private Dictionary<string, Command> externalCommands = new Dictionary<string, Command>();
-        private Dictionary<string, Paramter> parameters = new Dictionary<string, Paramter>();
+        private Dictionary<string, Parameter> parameters = new Dictionary<string, Parameter>();
         private State activeState_ { get; set; }
 
         public Machine()
@@ -62,11 +62,11 @@ namespace XTC.FSM
             externalCommands.Remove(_command.Name);
         }
 
-        public void AddParameter(string _name, Paramter _paramter)
+        public void AddParameter(string _name, Parameter _parameter)
         {
             if (parameters.ContainsKey(_name))
                 return;
-            parameters[_name] = _paramter;
+            parameters[_name] = _parameter;
         }
 
         public void DeleteParameter(string _name)
@@ -76,11 +76,11 @@ namespace XTC.FSM
             parameters.Remove(_name);
         }
 
-        public Paramter FindParameter(string _name)
+        public Parameter FindParameter(string _name)
         {
-            Paramter paramter;
-            parameters.TryGetValue(_name, out paramter);
-            return paramter;
+            Parameter parameter;
+            parameters.TryGetValue(_name, out parameter);
+            return parameter;
         }
 
         public void Run()
