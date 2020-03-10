@@ -5,12 +5,15 @@ namespace XTC.FSM
     public class Command
     {
         public string Name {get; private set;}
-        internal State state {get;set;}
-        private Machine machine_ {get;set;}
+        public State state {get;set;}
 
-        internal Command(Machine _machine, string _name)
+        protected Command()
         {
-            machine_ = _machine;
+
+        }
+
+        internal Command(string _name)
+        {
             Name = _name;
         }
     } 

@@ -14,6 +14,11 @@ namespace XTC.FSM
             finishAction = new FinishAction();
         }
 
+        protected State()
+        {
+
+        }
+
         private List<Action> actions = new List<Action>();
 
 

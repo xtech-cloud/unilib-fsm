@@ -17,6 +17,11 @@ namespace XTC.FSM
         internal State state {get;set;}
         protected Invoker invoker {get; private set;}
 
+        protected Action()
+        {
+
+        }
+
         protected abstract void onEnter();
         protected abstract void onExit();
         protected abstract void onUpdate();
@@ -26,8 +31,8 @@ namespace XTC.FSM
         {
             status = Status.STOP;
             state = _state;
-            finishCommand = new Command(state.machine, "FINISH");
-            invoker = new Invoker();
+            finishCommand = new Command("FINISH");
+            invoker = new Invoker(state.machine);
         }
 
         internal void doEnter()
@@ -48,6 +53,11 @@ namespace XTC.FSM
         protected void doFinish()
         {
             status = Status.FINISH;
+        }
+
+        protected Paramter findParamter(string _name)
+        {
+            return state.machine.FindParameter(_name);
         }
     }
 
