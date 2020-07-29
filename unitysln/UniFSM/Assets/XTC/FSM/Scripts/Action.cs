@@ -5,16 +5,16 @@ namespace XTC.FSM
 {
     public abstract class Action
     {
-        public enum Status
+        internal enum Status
         {
             STOP,
             RUN,
             FINISH
         }
 
-        public Status status{ get; private set;}
+        internal Status status{ get; private set;}
         public Command finishCommand {get;private set;}
-        internal State state {get;set;}
+        public State state {get;set;}
         protected Invoker invoker {get; private set;}
 
         protected Action()
