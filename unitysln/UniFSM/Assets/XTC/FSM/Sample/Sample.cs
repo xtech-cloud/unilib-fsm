@@ -32,7 +32,7 @@ class ActionAddRound : Action
 
     protected override void onExit()
     {
-        Parameter parameter = findParameter("round");
+        Parameter parameter = getParameter("round");
         parameter.AsInt += 1;
         Debug.LogFormat("--- Round {0} Finish ------------", parameter.AsInt);
     }
@@ -156,7 +156,7 @@ public class Sample : MonoBehaviour
         machine = new Machine();
 
         Parameter round = new Parameter(0);
-        machine.AddParameter("round", round);
+        machine.SetParameter("round", round);
 
         // 基本规则
         // 吃饱了运动，运动累了睡，睡醒了吃

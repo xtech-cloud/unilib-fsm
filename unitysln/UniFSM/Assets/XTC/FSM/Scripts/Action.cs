@@ -55,9 +55,13 @@ namespace XTC.FSM
             status = Status.FINISH;
         }
 
-        protected Parameter findParameter(string _name)
+        protected Parameter getParameter(string _name)
         {
-            return state.machine.FindParameter(_name);
+            return state.machine.GetParameter(_name);
+        }
+        protected void setParameter(string _name, Parameter _parameter)
+        {
+            state.machine.SetParameter(_name, _parameter);
         }
     }
 

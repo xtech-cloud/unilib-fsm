@@ -62,21 +62,12 @@ namespace XTC.FSM
             externalCommands.Remove(_command.Name);
         }
 
-        public void AddParameter(string _name, Parameter _parameter)
+        public void SetParameter(string _name, Parameter _parameter)
         {
-            if (parameters.ContainsKey(_name))
-                return;
             parameters[_name] = _parameter;
         }
 
-        public void DeleteParameter(string _name)
-        {
-            if (!parameters.ContainsKey(_name))
-                return;
-            parameters.Remove(_name);
-        }
-
-        public Parameter FindParameter(string _name)
+        public Parameter GetParameter(string _name)
         {
             Parameter parameter;
             parameters.TryGetValue(_name, out parameter);
